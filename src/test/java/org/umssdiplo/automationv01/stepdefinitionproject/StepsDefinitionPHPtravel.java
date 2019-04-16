@@ -19,6 +19,15 @@ public class StepsDefinitionPHPtravel {
     public void setMyCredentialsOnLoginPage() throws Throwable {
         login.setCredentials();
         login.eliminarRegistro("abc");
+
+    }
+
+
+    @And("^click 'Cars'$")
+    public void clickCars() throws Throwable{
+
+
+
     }
 
     @And("^click 'Registrar Maquinaria' tab in 'Header' page$")
@@ -43,4 +52,5 @@ public class StepsDefinitionPHPtravel {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
+
 }
