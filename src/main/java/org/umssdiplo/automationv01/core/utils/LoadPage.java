@@ -9,4 +9,9 @@ public final class LoadPage {
                 .navigate().to(PropertyAccessor.getInstance().getBaseUrl());
         return new Login();
     }
+
+    public static void backPagePhpTravels() {
+        ManageDriver.getInstance().getWebDriver()
+                .navigate().to(PropertyAccessor.getInstance().getBaseUrl());
+    }
 }

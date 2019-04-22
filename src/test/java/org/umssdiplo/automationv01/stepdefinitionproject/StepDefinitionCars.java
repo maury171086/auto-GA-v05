@@ -19,19 +19,22 @@ public class StepDefinitionCars {
     }*/
 
     @Given("^the 'PHP travel' page is loaded correctly$")
-    public void thePHPTravelPageIsLoadedCorrectly() throws Throwable{
-        cars.displayPageDashboard();
+    public void thePHPTravelPageIsLoadedCorrectly() {
+        cars.displayPageCars();
     }
 
     @And("^click botton CARS$")
     public void clickBottonCARS() throws Throwable{
         cars.displayPageCars();
+
     }
 
 
     @And("^click option CARS$")
     public void clickOptionCARS() throws Throwable{
         cars.displayOtionCars();
+        LoadPage.backPagePhpTravels();
+
 
     }
 
