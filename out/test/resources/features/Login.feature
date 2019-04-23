@@ -8,6 +8,6 @@ Feature: Login
 
   Scenario: Probar boton CARS de la pagina phptravels
     Given the 'PHP travel' page is loaded correctly
-    And click botton CARS
-    And click option CARS
+    #And click botton CARS
+    #And click option CARS
 

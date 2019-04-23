@@ -1,6 +1,7 @@
 package org.umssdiplo.automationv01.core.utils;
 
 import org.umssdiplo.automationv01.core.customwebdriver.ManageDriver;
+import org.umssdiplo.automationv01.core.managepage.Cars.Cars;
 import org.umssdiplo.automationv01.core.managepage.Login.Login;
 
 public final class LoadPage {
@@ -13,5 +14,11 @@ public final class LoadPage {
     public static void backPagePhpTravels() {
         ManageDriver.getInstance().getWebDriver()
                 .navigate().to(PropertyAccessor.getInstance().getBaseUrl());
+    }
+
+    public static Cars CarsPage() {
+        ManageDriver.getInstance().getWebDriver()
+                .navigate().to(PropertyAccessor.getInstance().getBaseUrl());
+        return new Cars();
     }
 }

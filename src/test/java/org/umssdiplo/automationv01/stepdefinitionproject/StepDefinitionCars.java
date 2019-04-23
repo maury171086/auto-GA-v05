@@ -39,4 +39,33 @@ public class StepDefinitionCars {
     }
 
 
+    @Given("^pagina 'php travels' cargar$")
+    public void paginaPhpTravelsCargar() {
+        cars = LoadPage.CarsPage();
+    }
+
+    @And("^click 'ADD' boton$")
+    public void clickADDBoton() throws Throwable{
+        cars.clickBtAdd();
+    }
+
+    @And("^insert \"([^\"]*)\" name cars$")
+    public void insertNameCars(String nameCar) throws Throwable {
+        cars.nameCars(nameCar);
+    }
+
+    @And("^insert \"([^\"]*)\" on text field$")
+    public void insertOnTextField(String text) throws Throwable {
+        cars.textImput(text);
+    }
+
+    @And("^click 'SUBMIT' boton$")
+    public void clickSUBMITBoton() throws Throwable{
+        cars.clickBttSubmit();
+    }
+
+    @And("^click 'DELETE' boton$")
+    public void clickDELETEBoton() {
+        cars.deleteBtt();
+    }
 }

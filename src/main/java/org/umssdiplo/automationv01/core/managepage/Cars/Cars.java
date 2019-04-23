@@ -16,6 +16,20 @@ public class Cars extends BasePage {
     @FindBy(xpath = "//*[@id=\"Cars\"]/li[1]/a")
     private WebElement opcionCars;
 
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/form/button")
+    private WebElement addCars;
+    @FindBy(xpath = "//*[@id=\"GENERAL\"]/div[3]/div/input")
+    private WebElement nombreAuto;
+
+    @FindBy(xpath = "/html/body")
+    private WebElement texto;
+    @FindBy(xpath = "//*[@id=\"add\"]")
+    private WebElement submit;
+
+
+    @FindBy(xpath = "//*[@id=\"15\"]/i")
+    private WebElement eliminar;
+
 
     public void displayPageDashboard(){
         CommonEvents.clickButton(botonDashboard);
@@ -27,6 +41,27 @@ public class Cars extends BasePage {
 
     public void displayOtionCars(){
         CommonEvents.clickButton(opcionCars);
+    }
+
+
+    public void clickBtAdd(){
+        CommonEvents.clickButton(addCars);
+    }
+
+    public void nameCars(String nameCars){
+        CommonEvents.setInputField(nombreAuto, nameCars);
+    }
+
+    public void textImput(String txt){
+        CommonEvents.setInputField(texto, txt);
+    }
+
+    public void clickBttSubmit(){
+        CommonEvents.clickButton(submit);
+    }
+
+    public void deleteBtt(){
+        CommonEvents.clickButton(eliminar);
     }
 
 }
