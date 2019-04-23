@@ -21,11 +21,12 @@ Feature: Login
     And insert "Arevalo" firstname
     And insert "Lopez" lastname
     And insert "arevalo@gmail.com" email
-   And insert "123456" password
-   And insert "71039562" mobile number
-   And insert "Bolivia" country
-#    And insert "AV. Geronimo de osorio" addres 1
+    And insert "123456" password
+    And insert "71039562" mobile number
+    And select Bolivia country
+    And insert "AV. Geronimo de osorio" addres 1
 #    And insert "Enabled" status
     And click button subscriber
+    And press check box hotels
 
 

@@ -45,6 +45,16 @@ public class StepsDefinitionFormularioUsuario {
         formularioUsuario.selectCountryBolivia();
     }
 
+    @And("^insert \"([^\"]*)\" addres 1$")
+    public void agregarCampoAddres1(String addres1) {
+        formularioUsuario.insertAddres1(addres1);
+    }
+
+    @And(("^press check box hotels$"))
+    public void pressCheckHotels() {
+        formularioUsuario.insertCheckHotels();
+    }
+
     @And("^click button subscriber$")
     public void clickButtonSubscriber() {
         formularioUsuario.pressButtonSubscriber();

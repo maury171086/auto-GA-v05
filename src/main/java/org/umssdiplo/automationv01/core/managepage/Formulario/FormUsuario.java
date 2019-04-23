@@ -31,6 +31,12 @@ public class FormUsuario extends BasePage {
     @FindBy(xpath = "//*[@id=\"content\"]/form/div/div[2]/div/div[6]/div/select/option[16]")
     private WebElement botonBolivia;
 
+    @FindBy(css = ".form-control")
+    private WebElement campoAddress1;
+
+    @FindBy(css = ".icheckbox_square-grey")
+    private WebElement checkHotels;
+
     public void insertFirstname(String firstname) {
         CommonEvents.setInputField(campoFirstname, firstname);
     }
@@ -58,5 +64,13 @@ public class FormUsuario extends BasePage {
     public void selectCountryBolivia() {
         CommonEvents.clickButton(seleccionContry);
         CommonEvents.clickButton(botonBolivia);
+    }
+
+    public void insertAddres1(String addres1) {
+        CommonEvents.setInputField(campoAddress1, addres1);
+    }
+
+    public void insertCheckHotels() {
+        CommonEvents.clickButton(checkHotels);
     }
 }
