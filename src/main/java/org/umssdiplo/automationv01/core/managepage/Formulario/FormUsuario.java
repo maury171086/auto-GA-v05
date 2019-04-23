@@ -55,7 +55,7 @@ public class FormUsuario extends BasePage {
         CommonEvents.setInputField(campoMobile, number);
     }
 
-    public void insertContry(String country) {
+    public void selectCountryBolivia() {
         CommonEvents.clickButton(seleccionContry);
         CommonEvents.clickButton(botonBolivia);
     }

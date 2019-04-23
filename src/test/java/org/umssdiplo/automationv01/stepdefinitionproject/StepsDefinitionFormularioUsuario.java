@@ -40,9 +40,9 @@ public class StepsDefinitionFormularioUsuario {
         formularioUsuario.insertMobilNumber(number);
     }
 
-    @And("^insert \"([^\"]*)\" country$")
-    public void agregarCampoCountry(String country) {
-        formularioUsuario.insertContry(country);
+    @And("^select Bolivia country$")
+    public void seleccionarPaisBolivia() {
+        formularioUsuario.selectCountryBolivia();
     }
 
     @And("^click button subscriber$")
