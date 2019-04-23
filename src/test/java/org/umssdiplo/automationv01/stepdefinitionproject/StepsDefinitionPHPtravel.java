@@ -4,7 +4,6 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import org.testng.Assert;
 import org.umssdiplo.automationv01.core.managepage.Login.SSIService;
 import org.umssdiplo.automationv01.core.utils.LoadPage;
 
@@ -19,7 +18,7 @@ public class StepsDefinitionPHPtravel {
     @And("^set my credentials on 'Login' page$")
     public void setMyCredentialsOnLoginPage() throws Throwable {
         ssiService.setCredentials();
-        ssiService.eliminarRegistro("abc");
+        // ssiService.eliminarRegistro("abc");
     }
 
     @And("^click 'Registrar Maquinaria' tab in 'Header' page$")
@@ -43,5 +42,20 @@ public class StepsDefinitionPHPtravel {
     public void fillFormRegistrarMaquinariaFromJsonDataEnFormularioMaquinaForm(String arg0) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
+    }
+
+    @And("^click on 'Enabled module'$")
+    public void clickOnEnabledModule() throws Throwable {
+        ssiService.clickenabledbtn();
+    }
+
+    @And("^click on 'Module'$")
+    public void clickOnModule() throws Throwable {
+        ssiService.clickmodule();
+    }
+
+    @And("^click on 'Enabled'$")
+    public void clickOnEnabled() throws Throwable {
+        ssiService.clickenabled();
     }
 }
