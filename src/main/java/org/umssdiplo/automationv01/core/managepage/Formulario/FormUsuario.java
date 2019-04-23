@@ -28,7 +28,7 @@ public class FormUsuario extends BasePage {
     @FindBy(xpath = "//*[@id=\"s2id_autogen1\"]")
     private WebElement seleccionContry;
 
-    @FindBy(css = ".select2-chosen")
+    @FindBy(xpath = "//*[@id=\"content\"]/form/div/div[2]/div/div[6]/div/select/option[16]")
     private WebElement botonBolivia;
 
     public void insertFirstname(String firstname) {
