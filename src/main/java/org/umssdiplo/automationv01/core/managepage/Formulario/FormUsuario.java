@@ -7,17 +7,56 @@ import org.umssdiplo.automationv01.core.utils.CommonEvents;
 
 public class FormUsuario extends BasePage {
 
-    @FindBy(css = ".form-control")
-    private WebElement tfFirstname;
+    @FindBy(name = "fname")
+    private WebElement campoFirstname;
 
-    @FindBy(xpath = "//*[@id=\"content\"]/form/div/div[2]/div/div[13]/div/div/label/div")
+    @FindBy(name = "lname")
+    private WebElement campoLastname;
+
+    @FindBy(name = "email")
+    private WebElement campoEmail;
+
+    @FindBy(css = ".icheckbox_square-grey")
     private WebElement botonSubscriber;
 
+    @FindBy(name = "password")
+    private WebElement campoPassword;
+
+    @FindBy(name = "mobile")
+    private WebElement campoMobile;
+
+    @FindBy(xpath = "//*[@id=\"s2id_autogen1\"]")
+    private WebElement seleccionContry;
+
+    @FindBy(css = ".select2-chosen")
+    private WebElement botonBolivia;
+
     public void insertFirstname(String firstname) {
-        CommonEvents.setInputField(tfFirstname, firstname);
+        CommonEvents.setInputField(campoFirstname, firstname);
+    }
+
+    public void insertLastname(String lastname) {
+        CommonEvents.setInputField(campoLastname, lastname);
+    }
+
+    public void insertEmail(String email) {
+        CommonEvents.setInputField(campoEmail, email);
+    }
+
+    public void insertPassword(String password) {
+        CommonEvents.setInputField(campoPassword, password);
     }
 
     public void pressButtonSubscriber() {
         CommonEvents.clickButton(botonSubscriber);
+    }
+
+    public void insertMobilNumber(String number) {
+        CommonEvents.setInputField(campoMobile, number);
+    }
+
+    public void insertContry(String country) {
+        CommonEvents.clickButton(seleccionContry);
+        CommonEvents.clickButton(botonBolivia);
     }
 }

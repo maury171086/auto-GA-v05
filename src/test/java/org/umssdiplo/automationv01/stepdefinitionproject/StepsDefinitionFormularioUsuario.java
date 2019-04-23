@@ -20,6 +20,31 @@ public class StepsDefinitionFormularioUsuario {
         formularioUsuario.insertFirstname(firstname);
     }
 
+    @And("^insert \"([^\"]*)\" lastname$")
+    public void agregarCampoLastname(String lastname) {
+        formularioUsuario.insertLastname(lastname);
+    }
+
+    @And("^insert \"([^\"]*)\" email$")
+    public void agregarCampoEmail(String email) {
+        formularioUsuario.insertEmail(email);
+    }
+
+    @And("^insert \"([^\"]*)\" password$")
+    public void agregarCampoPassword(String password) {
+        formularioUsuario.insertPassword(password);
+    }
+
+    @And("^insert \"([^\"]*)\" mobile number$")
+    public void agregarCampoMobilNumber(String number) {
+        formularioUsuario.insertMobilNumber(number);
+    }
+
+    @And("^insert \"([^\"]*)\" country$")
+    public void agregarCampoCountry(String country) {
+        formularioUsuario.insertContry(country);
+    }
+
     @And("^click button subscriber$")
     public void clickButtonSubscriber() {
         formularioUsuario.pressButtonSubscriber();
