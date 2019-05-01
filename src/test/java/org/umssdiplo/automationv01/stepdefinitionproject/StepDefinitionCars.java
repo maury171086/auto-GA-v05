@@ -65,7 +65,23 @@ public class StepDefinitionCars {
     }
 
     @And("^click 'DELETE' boton$")
-    public void clickDELETEBoton() {
+    public void clickDELETEBoton() throws Throwable{
         cars.deleteBtt();
+    }
+
+    @And("^click 'EDIT' boton$")
+    public void clickEDITBoton() throws Throwable{
+        cars.editBtt();
+    }
+
+    @And("^insert \"([^\"]*)\" name is cars$")
+    public void insertNameIsCars(String txtEdit) throws Throwable {
+        cars.txtEditImput(txtEdit);
+
+    }
+
+    @And("^click 'SUBMIT' boton edit$")
+    public void clickSUBMITBotonEdit() throws Throwable{
+        cars.submitEditBtt();
     }
 }
