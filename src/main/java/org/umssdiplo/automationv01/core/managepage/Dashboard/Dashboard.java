@@ -85,7 +85,11 @@ public class Dashboard extends BasePage {
     public void displayAdminsManagement() {
         CommonEvents.clickButton(botonAccounts);
         CommonEvents.clickButton(botonAdmins);
-        CommonEvents.clickButton(botonAddUsuario);
 
+
+    }
+
+    public void createNewUser() {
+        CommonEvents.clickButton(botonAddUsuario);
     }
 }

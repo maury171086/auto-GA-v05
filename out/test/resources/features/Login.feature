@@ -5,9 +5,8 @@ Feature: Login
     Given 'PHP travel' page is loaded
     And set my credentials on 'Login' page
 
-
-#  Scenario: probar boton website en el dashboard
-#    Given the 'PHP travel' page is loaded correctly
+  Scenario: probar boton website en el dashboard
+    Given the 'PHP travel' page is loaded correctly
 #    And press button website
 #    And press button quickbook
 #    And press button bookings
@@ -16,8 +15,9 @@ Feature: Login
 #    And press button newsletter
 #    And press button backup
 
-  Scenario: crear nuevo Usuario correctamente
-    Given mostrar formulario de un nuevo Usuario
+  Scenario: hacer crud para un usuario correctamente
+    Given mostrar page admins management
+    And press button new username
     And insert "Arevalo" firstname
     And insert "Lopez" lastname
     And insert "arevalo@gmail.com" email
@@ -28,5 +28,7 @@ Feature: Login
 #    And insert "Enabled" status
     And click button subscriber
     And press check box hotels
+    And press check tours
+    Then press button submit
 
 

@@ -2,6 +2,7 @@ package org.umssdiplo.automationv01.stepdefinitionproject;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import org.umssdiplo.automationv01.core.managepage.Dashboard.Dashboard;
 import org.umssdiplo.automationv01.core.managepage.Formulario.FormUsuario;
 
@@ -9,10 +10,15 @@ public class StepsDefinitionFormularioUsuario {
     Dashboard dashboard = new Dashboard();
     FormUsuario formularioUsuario;
 
-    @Given("^mostrar formulario de un nuevo Usuario$")
-    public void mostrarFormularioUsuario() throws Throwable {
+    @Given("^mostrar page admins management$")
+    public void mostrarPageAdminsManagement() throws Throwable {
         dashboard.displayAdminsManagement();
         formularioUsuario = new FormUsuario();
+    }
+
+    @And("^press button new username$")
+    public void displayFormUsername() {
+        dashboard.createNewUser();
     }
 
     @And("^insert \"([^\"]*)\" firstname$")
@@ -58,5 +64,15 @@ public class StepsDefinitionFormularioUsuario {
     @And("^click button subscriber$")
     public void clickButtonSubscriber() {
         formularioUsuario.pressButtonSubscriber();
+    }
+
+    @And("^press check tours$")
+    public void clickButtonTours() {
+        formularioUsuario.insertTours();
+    }
+
+    @Then("^press button submit$")
+    public void clickButtonSubmit() {
+        formularioUsuario.pressButtonSubmit();
     }
 }
