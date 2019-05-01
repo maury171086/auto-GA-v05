@@ -15,7 +15,7 @@ Feature: Login
 #    And press button newsletter
 #    And press button backup
 
-  Scenario: hacer crud para un usuario correctamente
+  Scenario: create new user admin
     Given mostrar page admins management
     And press button new username
     And insert "Arevalo" firstname
@@ -31,4 +31,15 @@ Feature: Login
     And press check tours
     Then press button submit
 
+  Scenario: modify user admin
+    Given mostrar page admins management
+    And press button edit
+    And insert "rudolf" firstname
+    And insert "felipez mancilla" lastname
+    Then press button submit
+
+  Scenario: delete user admin
+    Given mostrar page admins management
+    And press button delete
+    Then press button acept popus dialog
 

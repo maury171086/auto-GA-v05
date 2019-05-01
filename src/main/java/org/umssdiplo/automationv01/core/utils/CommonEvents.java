@@ -116,4 +116,7 @@ public class CommonEvents {
         webElement.sendKeys(Keys.ENTER);
     }
 
+    public static void pressButtonAceptPopsDialog() {
+        ManageDriver.getInstance().getWebDriver().switchTo().alert().accept();
+    }
 }

@@ -45,6 +45,12 @@ public class FormUsuario extends BasePage {
     @FindBy(xpath = "//*[@id=\"content\"]/form/div/div[3]/button")
     private WebElement botonSubmit;
 
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[8]/span/a[1]")
+    private WebElement botonEdit;
+
+    @FindBy(xpath = "//*[@id=\"146\"]")
+    private WebElement botonDelete;
+
     public void insertFirstname(String firstname) {
         CommonEvents.setInputField(campoFirstname, firstname);
     }
@@ -88,5 +94,17 @@ public class FormUsuario extends BasePage {
 
     public void pressButtonSubmit() {
         CommonEvents.clickButton(botonSubmit);
+    }
+
+    public void pressButtonEdit() {
+        CommonEvents.clickButton(botonEdit);
+    }
+
+    public void pressButtonDelete() {
+        CommonEvents.clickButton(botonDelete);
+    }
+
+    public void pressButtonAceptPopsDialog() {
+        CommonEvents.pressButtonAceptPopsDialog();
     }
 }

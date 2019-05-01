@@ -75,4 +75,19 @@ public class StepsDefinitionFormularioUsuario {
     public void clickButtonSubmit() {
         formularioUsuario.pressButtonSubmit();
     }
+
+    @And("^press button edit$")
+    public void pressButtonEdit() {
+        formularioUsuario.pressButtonEdit();
+    }
+
+    @And("^press button delete$")
+    public void pressButonDelete() {
+        formularioUsuario.pressButtonDelete();
+    }
+
+    @Then("^press button acept popus dialog$")
+    public void pressButtonAcept() {
+        formularioUsuario.pressButtonAceptPopsDialog();
+    }
 }

@@ -15,20 +15,31 @@ Feature: Login
 #    And press button newsletter
 #    And press button backup
 
-  Scenario: hacer crud para un usuario correctamente
+#  Scenario: create new user admin
+#    Given mostrar page admins management
+#    And press button new username
+#    And insert "Arevalo" firstname
+#    And insert "Lopez" lastname
+#    And insert "arevalo@gmail.com" email
+#    And insert "123456" password
+#    And insert "71039562" mobile number
+#    And select Bolivia country
+#    And insert "AV. Geronimo de osorio" addres 1
+##    And insert "Enabled" status
+#    And click button subscriber
+#    And press check box hotels
+#    And press check tours
+#    Then press button submit
+
+  Scenario: modify user admin
     Given mostrar page admins management
-    And press button new username
-    And insert "Arevalo" firstname
-    And insert "Lopez" lastname
-    And insert "arevalo@gmail.com" email
-    And insert "123456" password
-    And insert "71039562" mobile number
-    And select Bolivia country
-    And insert "AV. Geronimo de osorio" addres 1
-#    And insert "Enabled" status
-    And click button subscriber
-    And press check box hotels
-    And press check tours
+    And press button edit
+    And insert "rudolf" firstname
+    And insert "felipez mancilla" lastname
     Then press button submit
 
+  Scenario: delete user admin
+    Given mostrar page admins management
+    And press button delete
+    Then press button acept popus dialog
 
