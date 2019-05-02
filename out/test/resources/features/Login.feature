@@ -5,8 +5,8 @@ Feature: Login
     Given 'PHP travel' page is loaded
     And set my credentials on 'Login' page
 
-  Scenario: probar boton website en el dashboard
-    Given the 'PHP travel' page is loaded correctly
+#  Scenario: probar boton website en el dashboard
+#    Given press button dashboard
 #    And press button website
 #    And press button quickbook
 #    And press button bookings
@@ -30,16 +30,35 @@ Feature: Login
 #    And press check box hotels
 #    And press check tours
 #    Then press button submit
+#
+#  Scenario: modify user admin
+#    Given mostrar page admins management
+#    And press button edit
+#    And insert "rudolf" firstname
+#    And insert "felipez mancilla" lastname
+#    Then press button submit
+#
+#  Scenario: delete user admin
+#    Given mostrar page admins management
+#    And press button delete
+#    Then press button acept popus dialog
 
-  Scenario: modify user admin
-    Given mostrar page admins management
-    And press button edit
-    And insert "rudolf" firstname
-    And insert "felipez mancilla" lastname
-    Then press button submit
+#   Scenario: disabled module 'HOTELS'
+#     Given press button modules
+#     And press button DISABLED HOTELS
+#     Then acept the confirm disable module HOTELS
 
-  Scenario: delete user admin
-    Given mostrar page admins management
-    And press button delete
-    Then press button acept popus dialog
+#   Scenario: enabled module 'HOTELS'
+#    Given press button modules
+#     And press button ENABLED HOTELS
+#     Then acept the confirm disable module
 
+   Scenario: disable module 'BLOG'
+     Given press button modules
+     And press button DISABLED BLOG
+     Then acept the confirm disable module
+
+  Scenario: enabled module 'BLOG'
+    Given press button modules
+    And press button ENABLED BLOG
+    Then acept the confirm disable module

@@ -8,7 +8,7 @@ public class StepsDefinitionDashboard {
 
     Dashboard dashboard = new Dashboard();
 
-    @Given("^the 'PHP travel' page is loaded correctly$")
+    @Given("^press button dashboard$")
     public void seCargoPaginaPrincipal() throws Throwable {
         dashboard.displayPageDashboard();
     }

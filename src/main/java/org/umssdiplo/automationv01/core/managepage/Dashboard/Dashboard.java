@@ -38,6 +38,9 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//*[@id=\"ACCOUNTS\"]/li[1]")
     private WebElement botonAdmins;
 
+    @FindBy(xpath = "//*[@id=\"social-sidebar-menu\"]/li[3]/a")
+    private WebElement botonModules;
+
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/form/button")
     private WebElement botonAddUsuario;
 
@@ -91,5 +94,9 @@ public class Dashboard extends BasePage {
 
     public void createNewUser() {
         CommonEvents.clickButton(botonAddUsuario);
+    }
+
+    public void pressButtonModules() {
+        CommonEvents.clickButton(botonModules);
     }
 }
