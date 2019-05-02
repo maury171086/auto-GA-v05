@@ -2,6 +2,7 @@ package org.umssdiplo.automationv01.core.utils;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.umssdiplo.automationv01.core.customwebdriver.ManageDriver;
 
 import java.util.List;
@@ -127,6 +128,16 @@ public class CommonEvents {
      */
     public static void pressEnterKey(WebElement webElement) {
         webElement.sendKeys(Keys.ENTER);
+    }
+
+    public static void scrollComponent(WebElement webElement, WebDriver webDriver){
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+        js.executeScript("arguments[0].scrollIntoView(true);",webElement);
+    }
+
+    public static void selectOption(WebElement selectOption, String option) {
+        Select select = new Select(selectOption);
+        select.selectByVisibleText(option);
     }
 
 }

@@ -84,4 +84,14 @@ public class StepDefinitionCars {
     public void clickSUBMITBotonEdit() throws Throwable{
         cars.submitEditBtt();
     }
+
+    @And("^click Sub Menu 'CARS' in home menu$")
+    public void clickSubMenuCARSInHomeMenu() {
+        cars.clickSubMenuCars();
+    }
+
+    @And("^click 'Cars' in home sub menu$")
+    public void clickCarsInHomeSubMenu() {
+        cars.clickButtonCars();
+    }
 }

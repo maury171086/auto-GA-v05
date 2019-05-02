@@ -8,6 +8,9 @@ import org.umssdiplo.automationv01.core.managepage.BasePage;
 import org.umssdiplo.automationv01.core.utils.CommonEvents;
 import org.umssdiplo.automationv01.core.utils.PropertyAccessor;
 
+import java.util.List;
+import java.util.Map;
+
 //import static org.umssdiplo.automationv01.core.utils.c.*;
 
 public class Login extends BasePage {
@@ -31,9 +34,10 @@ public class Login extends BasePage {
     @FindBy(id = "aaaa")
     private WebElement crearProductBtn;
 
-    public void setCredentials() {
-        String username = PropertyAccessor.getInstance().getUser();
-        String password = PropertyAccessor.getInstance().getPassword();
+    public void setCredentials(DataTable dt) {
+        List<Map<String, String>> list = dt.asMaps(String.class, String.class);
+        String username = (list.get(0).get("username"));
+        String password = (list.get(0).get("password"));
         CommonEvents.setInputField(usernameInputField, username);
         CommonEvents.setInputField(passwordInputField, password);
         CommonEvents.clickButton(loginBtn);

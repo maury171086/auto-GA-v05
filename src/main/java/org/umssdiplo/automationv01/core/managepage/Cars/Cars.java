@@ -38,6 +38,10 @@ public class Cars extends BasePage {
 
     @FindBy(id = "update")
     private WebElement submitEditar;
+    @FindBy(xpath = "//*[@id=\"social-sidebar-menu\"]/li[10]/a")
+    private WebElement buttonSubMenuCars;
+    @FindBy(xpath = "//*[@id=\"Cars\"]/li[1]/a")
+    private WebElement buttonCars;
 
 
     public void displayPageDashboard(){
@@ -83,6 +87,13 @@ public class Cars extends BasePage {
 
     public void submitEditBtt(){
         CommonEvents.clickButton(submitEditar);
+    }
+
+    public void clickSubMenuCars(){
+        CommonEvents.clickButton(buttonSubMenuCars);
+    }
+    public void clickButtonCars(){
+        CommonEvents.clickButton(buttonCars);
     }
 
 }
