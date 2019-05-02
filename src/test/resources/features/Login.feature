@@ -83,6 +83,44 @@ Scenario Outline: Offers Settings
   Examples:
     |Target |Page_Title     |Listings_Page|
     |Self  |Offers Prueba |5           |
+  # COUPONS
+  Scenario Outline: Coupons Manage
+    Given 'PHP travels section Coupons' page is loaded
+    And Click in Menu 'COUPONS' in home menu
+    And Click in button'ADD' in page Coupons Code Management
+    And Select status "<status>" in form Add Coupon Code
+    And Insert percentaje "<percentaje>" in Add form Coupon Code
+    And Insert "<Max_uses>" in Add form Coupons Code
+    And Click button 'Generate' code
+    And Click button 'SUBMIT' in form Add Coupons Code
+    Examples:
+    |status|percentaje|Max_uses|
+    |Enable| 50       |   2    |
+
+  #NEWSLETTERS
+  Scenario Outline: Send NewsLetters
+    Given 'PHP travels secction NewsLetters' page is loaded
+    And Click in menu 'NEWSLETTERS' in home page
+    And Click Button 'SEND NEWSLETTERS' in form news letters
+    And Select "<Send_To>" in form send newsletters
+    And Insert "<Subject>" in form
+    And click Button 'SEND' in form
+    Examples:
+      |Send_To  |Subject|
+      |Customers|tema   |
+   # BOOKINGS
+  Scenario Outline: Edidt Bookings
+    Given 'PHP travels secction Bookings' page is loaded
+    And Click in menu 'BOOKINGS' in home page
+    And Click button 'EDIT' in Booking page
+    And Select "<Booking_Status>" in form Bookings
+    And button 'UPDATE BOOKING' in form
+    Examples:
+    |Booking_Status|
+    |Cancelled     |
+
+
+
 
 
 

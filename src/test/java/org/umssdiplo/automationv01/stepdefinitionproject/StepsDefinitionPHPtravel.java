@@ -7,6 +7,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.umssdiplo.automationv01.core.managepage.Blog.BlogsCategories;
 import org.umssdiplo.automationv01.core.managepage.Blog.Posts;
+import org.umssdiplo.automationv01.core.managepage.Bookings.Bookings;
+import org.umssdiplo.automationv01.core.managepage.Coupons.Coupons;
+import org.umssdiplo.automationv01.core.managepage.Letters.NewsLetters;
 import org.umssdiplo.automationv01.core.managepage.Login.Login;
 import org.umssdiplo.automationv01.core.managepage.Offers.ManageOffers;
 import org.umssdiplo.automationv01.core.managepage.Offers.OffersSettings;
@@ -18,6 +21,9 @@ public class StepsDefinitionPHPtravel {
     private OffersSettings offersSettings;
     private Posts posts;
     private BlogsCategories blogsCategories;
+    private Coupons coupons;
+    private NewsLetters newsLetters;
+    private Bookings bookings;
 
 
     //Manage Offers
@@ -214,5 +220,113 @@ public class StepsDefinitionPHPtravel {
     @And("^Click Button 'ADD' in form$")
     public void clickButtonADDInForm() {
         blogsCategories.clickAddFormBlogCategories();
+    }
+
+    // Coupons step deffinitions
+    @Given("^'PHP travels section Coupons' page is loaded$")
+    public void phpTravelsSectionCouponsPageIsLoaded() {
+        coupons = LoadPage.couponsPage();
+    }
+
+    @And("^Click in Menu 'COUPONS' in home menu$")
+    public void clickInMenuCOUPONSInHomeMenu() {
+        coupons.clickMenuCoupons();
+    }
+
+    @And("^Click in button'ADD' in page Coupons Code Management$")
+    public void clickInButtonADDInPageCouponsCodeManagement() {
+        coupons.clickAddCoupons();
+    }
+
+    @And("^Select status \"([^\"]*)\" in form Add Coupon Code$")
+    public void selectStatusInFormAddCouponCode(String status_coupons) throws Throwable {
+        coupons.selectStatusCoupons(status_coupons);
+    }
+
+    @And("^Insert percentaje \"([^\"]*)\" in Add form Coupon Code$")
+    public void insertPercentajeInAddFormCouponCode(String percentaje_coupons) throws Throwable {
+        coupons.insertPercentajeCoupons(percentaje_coupons);
+    }
+
+    @And("^Insert \"([^\"]*)\" in Add form Coupons Code$")
+    public void insertInAddFormCouponsCode(String max_Uses) throws Throwable {
+        coupons.insertMaxUses(max_Uses);
+    }
+
+    @And("^Click 'Star Date' in form Add Coupons Code$")
+    public void clickStarDateInFormAddCouponsCode() {
+        coupons.clickStartDate();
+    }
+
+    @And("^Click 'date ini' in text$")
+    public void clickDateIniInText() {
+        coupons.selectDateIni();
+    }
+
+    @And("^Click button 'Generate' code$")
+    public void clickButtonGenerateCode() {
+        coupons.clickButtonGenerateCode();
+    }
+
+    @And("^Click button 'SUBMIT' in form Add Coupons Code$")
+    public void clickButtonSUBMITInFormAddCouponsCode() {
+        coupons.clickSubmitFormCoupons();
+    }
+    //LETTERS Step deffinitions
+
+    @Given("^'PHP travels secction NewsLetters' page is loaded$")
+    public void phpTravelsSecctionNewsLettersPageIsLoaded() {
+        newsLetters = LoadPage.newsLettersPage();
+    }
+
+    @And("^Click in menu 'NEWSLETTERS' in home page$")
+    public void clickInMenuNEWSLETTERSInHomePage() {
+        newsLetters.clickNewsLettersMenu();
+    }
+
+    @And("^Click Button 'SEND NEWSLETTERS' in form news letters$")
+    public void clickButtonSENDNEWSLETTERSInFormNewsLetters() {
+        newsLetters.clickSendNewsLetters();
+    }
+
+    @And("^Select \"([^\"]*)\" in form send newsletters$")
+    public void selectInFormSendNewsletters(String send_to) throws Throwable {
+        newsLetters.selectSendTo(send_to);
+    }
+
+    @And("^Insert \"([^\"]*)\" in form$")
+    public void insertInForm(String subject) throws Throwable {
+        newsLetters.insertSubject(subject);
+    }
+
+    @And("^click Button 'SEND' in form$")
+    public void clickButtonSENDInForm() {
+        newsLetters.clickSend();
+    }
+    //Bookings step deffinitions
+
+    @Given("^'PHP travels secction Bookings' page is loaded$")
+    public void phpTravelsSecctionBookingsPageIsLoaded() {
+        bookings = LoadPage.bookingsPage();
+    }
+
+    @And("^Click in menu 'BOOKINGS' in home page$")
+    public void clickInMenuBOOKINGSInHomePage() {
+        bookings.clickMenuBookings();
+    }
+
+    @And("^Click button 'EDIT' in Booking page$")
+    public void clickButtonEDITInBookingPage() {
+        bookings.clickBottonEdit();
+    }
+
+    @And("^Select \"([^\"]*)\" in form Bookings$")
+    public void selectInFormBookings(String booking_Status) throws Throwable {
+        bookings.selectBookingStatus(booking_Status);
+    }
+
+    @And("^button 'UPDATE BOOKING' in form$")
+    public void buttonUPDATEBOOKINGInForm() {
+        bookings.clickUpdateBooking();
     }
 }
