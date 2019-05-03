@@ -48,7 +48,8 @@ public class FormUsuario extends BasePage {
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[8]/span/a[1]")
     private WebElement botonEdit;
 
-    @FindBy(xpath = "//*[@id=\"146\"]")
+    //@FindBy(xpath = "//*[@id=\"146\"]")
+    @FindBy(css = ".fa-times")
     private WebElement botonDelete;
 
     public void insertFirstname(String firstname) {
