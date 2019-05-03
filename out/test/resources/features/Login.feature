@@ -53,12 +53,22 @@ Feature: Login
 #     And press button ENABLED HOTELS
 #     Then acept the confirm disable module
 
-   Scenario: disable module 'BLOG'
-     Given press button modules
-     And press button DISABLED BLOG
-     Then acept the confirm disable module
+#  Scenario: disable module 'BLOG'
+#    Given press button modules
+#    And press button DISABLED BLOG
+#    Then acept the confirm disable module
+#
+#  Scenario: enabled module 'BLOG'
+#    Given press button modules
+#    And press button ENABLED BLOG
+#    Then acept the confirm disable module
+#
+#  Scenario: verify page settings module 'BLOG'
+#    Given press button modules
+#    And press button settings 'BLOG'
+#    Then press button modules
 
-  Scenario: enabled module 'BLOG'
+  Scenario: verify button up order module 'BLOG'
     Given press button modules
-    And press button ENABLED BLOG
-    Then acept the confirm disable module
+    And press button button order up
+

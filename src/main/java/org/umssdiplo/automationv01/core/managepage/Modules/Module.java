@@ -16,6 +16,12 @@ public class Module extends BasePage {
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/table/tbody/tr[7]/td[3]//*[@id=\"moduleStatus\"]")
     private WebElement botonStatusBlog;
 
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/table/tbody/tr[7]/td[3]/a/button")
+    private WebElement botonSettingsBlog;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/table/tbody/tr[7]/td[4]//*[@id=\"moduleOrder\"]")
+    private WebElement botonUpOrderModuleBlog;
+
     public void disabledHotels() {
         CommonEvents.clickButton(botonStatusHotels);
     }
@@ -34,5 +40,13 @@ public class Module extends BasePage {
 
     public void enabledBlog() {
         CommonEvents.clickButton(botonStatusBlog);
+    }
+
+    public void displaySettingsBlog() {
+        CommonEvents.clickButton(botonSettingsBlog);
+    }
+
+    public void upOrderModuleBlog() {
+        CommonEvents.clickButton(botonUpOrderModuleBlog);
     }
 }

@@ -39,4 +39,14 @@ public class StepsDefinitionModules {
     public void pressButtonAceptDisabledModuleHotels() {
         module.aceptDisabledModuleHotels();
     }
+
+    @And("press button settings 'BLOG'")
+    public void pressButonSettingsBlog() {
+        module.displaySettingsBlog();
+    }
+
+    @And("press button button order up")
+    public void pressButtonUpOrderModuleBlog() {
+        module.upOrderModuleBlog();
+    }
 }
