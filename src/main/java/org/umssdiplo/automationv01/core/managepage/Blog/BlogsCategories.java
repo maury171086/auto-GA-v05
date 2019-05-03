@@ -7,6 +7,8 @@ import org.umssdiplo.automationv01.core.utils.CommonEvents;
 
 public class BlogsCategories extends BasePage {
 
+    @FindBy(xpath = "//*[@id=\"social-sidebar-menu\"]/li[11]/a")
+    private WebElement botonBlog;
     @FindBy(xpath = "//*[@id=\"Blog\"]/li[2]/a")
     private WebElement clickBlogCategories;
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div[1]/button")
@@ -19,6 +21,13 @@ public class BlogsCategories extends BasePage {
     private WebElement clickNameInSpanish;
     @FindBy(xpath = "//*[@id=\"ADD_BLOG_CAT\"]/div[2]/div/form/div[3]/button[2]")
     private WebElement buttonAddFormBlogCategories;
+    @FindBy(xpath = "//*[@id=\"Blog\"]/li[2]/a")
+    private WebElement subMenuBlogsCategories;
+
+    public void ClickMenuBlog(){
+        CommonEvents.scrollComponent(botonBlog,webDriver);
+        CommonEvents.clickButton(botonBlog);
+    }
 
     public void clickButtonBlogsCategories(){
         CommonEvents.clickButton(clickBlogCategories);
@@ -40,5 +49,9 @@ public class BlogsCategories extends BasePage {
     }
     public void clickAddFormBlogCategories(){
         CommonEvents.clickButton(buttonAddFormBlogCategories);
+    }
+
+    public void clickSubMenuBlogCategories(){
+        CommonEvents.clickButton(subMenuBlogsCategories);
     }
 }

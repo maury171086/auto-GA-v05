@@ -11,7 +11,7 @@ public class NewsLetters extends BasePage {
     private WebElement clickNewsLetters;
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[3]/form/button")
     private WebElement clickBittonSendNewsLetters;
-    @FindBy(xpath = "//*[@id=\"select2-drop\"]/div/input")
+    @FindBy(css = "select2-input")
     private WebElement selectSendTo;
     @FindBy(xpath = "//*[@id=\"content\"]/form/div[1]/div[2]/fieldset/div/div[2]/input")
     private WebElement setSubject;

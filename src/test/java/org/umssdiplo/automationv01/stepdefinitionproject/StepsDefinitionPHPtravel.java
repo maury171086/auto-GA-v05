@@ -8,6 +8,7 @@ import cucumber.api.java.en.Then;
 import org.umssdiplo.automationv01.core.managepage.Blog.BlogsCategories;
 import org.umssdiplo.automationv01.core.managepage.Blog.Posts;
 import org.umssdiplo.automationv01.core.managepage.Bookings.Bookings;
+import org.umssdiplo.automationv01.core.managepage.Cars.Cars;
 import org.umssdiplo.automationv01.core.managepage.Coupons.Coupons;
 import org.umssdiplo.automationv01.core.managepage.Letters.NewsLetters;
 import org.umssdiplo.automationv01.core.managepage.Login.Login;
@@ -24,6 +25,7 @@ public class StepsDefinitionPHPtravel {
     private Coupons coupons;
     private NewsLetters newsLetters;
     private Bookings bookings;
+    private Cars cars;
 
 
     //Manage Offers
@@ -147,12 +149,12 @@ public class StepsDefinitionPHPtravel {
         // POSTS
     @Given("^'PHP travels section Blog' page is loaded$")
     public void phpTravelsSectionBlogPageIsLoaded() {
-        posts = LoadPage.postsPage();
+        blogsCategories =LoadPage.blogsCategoriesPage();
     }
 
     @And("^Click Menu 'BLOG' in home menu$")
     public void clickMenuBLOGInHomeMenu() {
-        posts.ClickMenuBlog();
+        blogsCategories.ClickMenuBlog();
     }
 
     @And("^Click Sub Menu 'POSTS' in home Sub Menu$")
@@ -194,6 +196,10 @@ public class StepsDefinitionPHPtravel {
     public void clickSubMenuBLOGCATEGORIESInHomeSubMenu() {
         blogsCategories.clickButtonBlogsCategories();
 
+    }
+    @And("^Click Sub Menu 'BLOG CATEGORIES'$")
+    public void clickSubMenuBLOGCATEGORIES() {
+        blogsCategories.clickSubMenuBlogCategories();
     }
 
     @And("^Click button 'ADD' in form Blog Categories$")
@@ -329,4 +335,87 @@ public class StepsDefinitionPHPtravel {
     public void buttonUPDATEBOOKINGInForm() {
         bookings.clickUpdateBooking();
     }
+    // step deffinition Cars
+    //add
+    @Given("^pagina 'php travels section Cars' page is load$")
+    public void paginaPhpTravelsSectionCarsPageIsLoad() {
+        cars = LoadPage.CarsPage();
+    }
+
+    @And("^click Sub Menu 'CARS' in home$")
+    public void clickSubMenuCARSInHome() {
+        cars.clickMenuCars();
+    }
+
+    @And("^click 'Cars' on home sub menu$")
+    public void clickCarsOnHomeSubMenu() {
+        cars.clickSubMenuCars();
+    }
+
+    @And("^click 'ADD' boton list$")
+    public void clickADDBotonList() {
+        cars.clickAddCars();
+    }
+
+    @And("^Insert \"([^\"]*)\" on form cars$")
+    public void insertOnFormCars(String name_cars) throws Throwable {
+        cars.InsertNameCars(name_cars);
+    }
+
+    @And("^click Button 'SUBMIT' boton$")
+    public void clickButtonSUBMITBoton() {
+        cars.clickButtonSubmitForm();
+    }
+    //delete
+    @Given("^'PHP travels section Cars' page is loaded$")
+    public void phpTravelsSectionCarsPageIsLoaded() {
+        cars = LoadPage.CarsPage();
+    }
+
+    @And("^Click menu 'CARS' in home page$")
+    public void clickMenuCARSInHomePage() {
+        cars.clickMenuCars();
+    }
+
+    @And("^Click sub menu 'Cars' in home sub menu$")
+    public void clickSubMenuCarsInHomeSubMenu() {
+        cars.clickSubMenuCars();
+    }
+
+    @And("^Click button 'DELETE' in form Cars$")
+    public void clickButtonDELETEInFormCars() {
+        cars.clickDeleteCars();
+    }
+    // edit cars
+    @Given("^'PHP travels sections Cars' page is loaded$")
+    public void phpTravelsSectionsCarsPageIsLoaded() {
+        cars = LoadPage.CarsPage();
+    }
+
+    @And("^Click in menu 'CARS' in home page$")
+    public void clickInMenuCARSInHomePage() {
+        cars.clickMenuCars();
+    }
+
+    @And("^Click  'CARS' on sub menu$")
+    public void clickCARSOnSubMenu() {
+        cars.clickSubMenuCars();
+    }
+
+    @And("^click 'EDIT' boton$")
+    public void clickEDITBoton() {
+        cars.clickBotonEditar();
+    }
+
+    @And("^Insert <\"([^\"]*)\"> on name cars form$")
+    public void insertOnNameCarsForm(String name_cars_edit) throws Throwable {
+        cars.InsertNameCarsEdit(name_cars_edit);
+    }
+
+    @And("^click 'SUBMIT' boton edit$")
+    public void clickSUBMITBotonEdit() {
+        cars.ClickSubmitEditNameCars();
+    }
+
+
 }

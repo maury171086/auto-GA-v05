@@ -6,7 +6,7 @@ import org.umssdiplo.automationv01.core.managepage.BasePage;
 import org.umssdiplo.automationv01.core.utils.CommonEvents;
 
 public class Coupons extends BasePage {
-    @FindBy(xpath = "//*[@id=\"social-sidebar-menu\"]/li[14]/a")
+    @FindBy(xpath = "//*[@id=\"social-sidebar-menu\"]/li[14]/a") //*[@id="social-sidebar-menu"]/li[14]/a
     private WebElement menuSelectCoupons;
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div[1]/button")
     private WebElement addCouponsCode;
@@ -22,11 +22,11 @@ public class Coupons extends BasePage {
     private WebElement clickDateIni;
     @FindBy(id = "add")
     private WebElement clickButtonGenerate;
-    @FindBy(id = "#")
+    @FindBy(css = "btn btn-primary submitcoupon")
     private WebElement clickButtonSumbitCoupons;
 
     public void clickMenuCoupons(){
-        //CommonEvents.scrollComponent(menuSelectCoupons, webDriver);
+        CommonEvents.scrollComponent(menuSelectCoupons, webDriver);
         CommonEvents.clickButton(menuSelectCoupons);
     }
     public void clickAddCoupons(){

@@ -50,4 +50,5 @@ public final class LoadPage {
     public static Bookings bookingsPage(){
         return new Bookings();
     }
+
 }

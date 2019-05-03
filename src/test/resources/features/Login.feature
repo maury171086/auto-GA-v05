@@ -8,25 +8,35 @@ Feature: Login
       |admin@phptravels.com|demoadmin|
 
   # menu Cars
-  Scenario: cars page
-    Given pagina 'php travels' cargar
-    And click Sub Menu 'CARS' in home menu
-    And click 'Cars' in home sub menu
-    And click 'ADD' boton
-    And insert "ABC CARS" name cars
+  Scenario Outline: Add cars on Cars
+    Given pagina 'php travels section Cars' page is load
+    And click Sub Menu 'CARS' in home
+    And click 'Cars' on home sub menu
+    And click 'ADD' boton list
+    And Insert "<car_name>" on form cars
     #And insert "ABC DESCRIPTION" on text field
-    And click 'SUBMIT' boton
+    And click Button 'SUBMIT' boton
+    Examples:
+    |car_name       |
+    |The Knowns Cars|
 
-  Scenario: eliminar Cars de la pagina
-    And click 'DELETE' boton
 
-  Scenario: editar Cars de la pagina
+  Scenario: Delete Cars on Cars
+    Given 'PHP travels section Cars' page is loaded
+    And Click menu 'CARS' in home page
+    And Click sub menu 'Cars' in home sub menu
+    And Click button 'DELETE' in form Cars
+
+  Scenario: Edidt Cars on Cars
+    Given 'PHP travels sections Cars' page is loaded
+    And Click in menu 'CARS' in home page
+    And Click  'CARS' on sub menu
     And click 'EDIT' boton
-    And insert "ABC CARS EDIT" name is cars
+    And Insert <"name_cars_edit"> on name cars form
     And click 'SUBMIT' boton edit
 
   # menu Blog
-  Scenario Outline: Posts page
+  Scenario Outline: ADD Posts page
     Given 'PHP travels section Blog' page is loaded
     And Click Menu 'BLOG' in home menu
     And Click Sub Menu 'POSTS' in home Sub Menu
@@ -40,10 +50,10 @@ Feature: Login
     |post_Title   |text_Area                     |status|category|
     |Posts Ejemplo|este es un ejemplo de Posts   |Enable|Adventure|
 
-  Scenario Outline: Blog Categories
+  Scenario Outline: Add Blog Categories
     Given 'PHP travels section Blog' page is loaded
     And Click Menu 'BLOG' in home menu
-    And Click Sub Menu 'BLOG CATEGORIES' in home Sub Menu
+    And Click Sub Menu 'BLOG CATEGORIES'
     And Click button 'ADD' in form Blog Categories
     And Insert imput Category Name "<category_Name>" in form
     And Select "<status>" in form Blog Cateories
@@ -92,7 +102,7 @@ Scenario Outline: Offers Settings
     And Insert percentaje "<percentaje>" in Add form Coupon Code
     And Insert "<Max_uses>" in Add form Coupons Code
     And Click button 'Generate' code
-    And Click button 'SUBMIT' in form Add Coupons Code
+    #And Click button 'SUBMIT' in form Add Coupons Code
     Examples:
     |status|percentaje|Max_uses|
     |Enable| 50       |   2    |
@@ -102,7 +112,7 @@ Scenario Outline: Offers Settings
     Given 'PHP travels secction NewsLetters' page is loaded
     And Click in menu 'NEWSLETTERS' in home page
     And Click Button 'SEND NEWSLETTERS' in form news letters
-    And Select "<Send_To>" in form send newsletters
+    #And Select "<Send_To>" in form send newsletters
     And Insert "<Subject>" in form
     And click Button 'SEND' in form
     Examples:
