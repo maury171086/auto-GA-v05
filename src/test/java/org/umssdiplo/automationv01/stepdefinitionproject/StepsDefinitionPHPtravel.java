@@ -1,61 +1,269 @@
 package org.umssdiplo.automationv01.stepdefinitionproject;
 
-import cucumber.api.PendingException;
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import org.umssdiplo.automationv01.core.managepage.Login.SSIService;
+import org.umssdiplo.automationv01.core.managepage.Airport.Airport;
+import org.umssdiplo.automationv01.core.managepage.Login.Login;
+import org.umssdiplo.automationv01.core.managepage.Module.Module;
+import org.umssdiplo.automationv01.core.managepage.Room.Room;
 import org.umssdiplo.automationv01.core.utils.LoadPage;
 
 public class StepsDefinitionPHPtravel {
-    private SSIService ssiService;
+    private Login login;
+    private Room room;
+    private Module module;
+    private Airport airport;
 
-    @Given("^'SisSecurity' page is loaded$")
+    @Given("^'PHP travel' page is loaded$")
     public void phpTravelPageIsLoaded() throws Throwable {
-        ssiService = LoadPage.loginPage();
+        login = LoadPage.loginPage();
     }
 
-    @And("^set my credentials on 'Login' page$")
-    public void setMyCredentialsOnLoginPage() throws Throwable {
-        ssiService.setCredentials();
-        // ssiService.eliminarRegistro("abc");
-    }
-
-    @And("^click 'Registrar Maquinaria' tab in 'Header' page$")
-    public void clickRegistrarMaquinariaTabInHeaderPage() throws Throwable {
-//        ssiService.clickRegistrarMaquinariTab();
-    }
-
-    @And("^fill \"([^\"]*)\" nombre maquinaria campo en 'Formulario Maquina' form$")
-    public void fillNombreMaquinariaCampoEnFormularioMaquinaForm(String nombreMaquinaria) throws Throwable {
+    @And("^fill credentials on 'Login' data$")
+    public void fillCredentialsOnLoginData(DataTable dt) {
+        login.setCredentials(dt);
 
     }
 
-    @Then("^verificar que \"([^\"]*)\" esta desplago en 'Lista de Maquinarias' tabla$")
-    public void verificarQueEstaDesplagoEnListaDeMaquinariasTabla(String nombreMaquinariaExperado) throws Throwable {
-//        String nombreMaquinariaActual = nombreObjectoTable.getNombreTableInsertada();
-//
-//        Assert.assertEquals(nombreMaquinariaActual, nombreMaquinariaExperado);
-    }
-
-    @And("^fill 'Form Registrar Maquinaria' from json data \"([^\"]*)\" en 'Formulario Maquina' form$")
-    public void fillFormRegistrarMaquinariaFromJsonDataEnFormularioMaquinaForm(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @And("^click on 'Enabled module'$")
-    public void clickOnEnabledModule() throws Throwable {
-        ssiService.clickenabledbtn();
-    }
-
-    @And("^click on 'Module'$")
+    @And("^click en Menu 'Module' en pagina home$")
     public void clickOnModule() throws Throwable {
-        ssiService.clickmodule();
+        module.clickmodule();
     }
 
-    @And("^click on 'Enabled'$")
+    @And("^click en 'Enabled/Disabled module' en pagina module$")
+    public void clickOnEnabledModule() throws Throwable {
+        module.clickenabledbtn();
+    }
+
+    @And("^click en 'Enabled/Disablet' en alert$")
     public void clickOnEnabled() throws Throwable {
-        ssiService.clickenabled();
+        module.clickenabled();
+    }
+
+    @And("^click en 'Dashboard' en pagina home$")
+    public void clickOnDashboardEnPaginaHome() throws Throwable {
+        module.clickdashboard();
+    }
+
+    @And("^Click en Menu 'Hotels' en pagina home$")
+    public void clickEnMenuHOTELSEnPaginaHome() throws Throwable {
+        room.clickmenuhotel();
+    }
+
+    @And("^Click en SubMenu 'Rooms' en pagina Hotels$")
+    public void clickEnSubMenuRoomsEnPaginaHotels() throws Throwable {
+        room.clicksubmenuroom();
+    }
+
+    @And("^Click en 'ADD' en pagina Rooms$")
+    public void clickEnADDEnPaginaRooms() throws Throwable {
+        room.clickaddroom();
+    }
+
+    @And("^Select Status \"([^\"]*)\" en formulario add Rooms$")
+    public void selectStatusEnFormularioAddRooms(String status) throws Throwable {
+        room.setstatusroom(status);
+    }
+
+    @And("^Select Room Type \"([^\"]*)\" en formulario add Rooms$")
+    public void selectRoomTypeEnFormularioAddRooms(String roomtype) throws Throwable {
+        room.setroomtype(roomtype);
+    }
+
+    @And("^Select Hotel \"([^\"]*)\" en formulario add Rooms$")
+    public void selectHotelEnFormularioAddRooms(String hotel) throws Throwable {
+        room.sethotel(hotel);
+    }
+
+    @And("^Insert descripcion Room \"([^\"]*)\" en formulario add Rooms$")
+    public void insertDescripcionRoomEnFormularioAddRooms(String descrip) throws Throwable {
+        room.setdescription(descrip);
+    }
+
+    @And("^Insert precio \"([^\"]*)\" en formulario add Rooms$")
+    public void insertPrecioEnFormularioAddRooms(String precio) throws Throwable {
+        room.setprice(precio);
+    }
+
+    @And("^Insert cantidad \"([^\"]*)\" en formulario add Rooms$")
+    public void insertCantidadEnFormularioAddRooms(String cantidad) throws Throwable {
+        room.setcantidad(cantidad);
+    }
+
+    @And("^Insert Minimum Stay \"([^\"]*)\" en formulario add Rooms$")
+    public void insertMinimumStayEnFormularioAddRooms(String minstay) throws Throwable {
+        room.setminimunstay(minstay);
+    }
+
+    @And("^Insert Max Adults \"([^\"]*)\" en formulario add Rooms$")
+    public void insertMaxAdultsEnFormularioAddRooms(String maxadul) throws Throwable {
+        room.setmaxadults(maxadul);
+    }
+
+    @And("^Insert Max Children \"([^\"]*)\" en formulario add Rooms$")
+    public void insertMaxChildrenEnFormularioAddRooms(String maxchil) throws Throwable {
+        room.setmaxchildren(maxchil);
+    }
+
+    @And("^Insert Num of Extra Beds \"([^\"]*)\" en formulario add Rooms$")
+    public void insertNumOfExtraBedsEnFormularioAddRooms(String extrabeds) throws Throwable {
+        room.setnumextrabeds(extrabeds);
+    }
+
+    @And("^Insert Extra Bed Charges \"([^\"]*)\" en formulario add Rooms$")
+    public void insertExtraBedChargesEnFormularioAddRooms(String bedscharges) throws Throwable {
+        room.setextrabedcharges(bedscharges);
+    }
+
+    @And("^Click 'SUBMIT' en formulario add Rooms$")
+    public void clickSUBMITEnFormularioAddRooms() {
+        room.clicksubmitnewroom();
+    }
+
+    @And("^Click en 'EDIT' en pagina Rooms$")
+    public void clickEnEDITEnPaginaRooms() {
+        room.clickeditroom();
+    }
+
+    @And("^Click 'SUBMIT' en formulario edit Rooms$")
+    public void clickSUBMITEnFormularioEditRooms() {
+        room.clicksubmiteditroom();
+    }
+
+    @And("^Click 'Delete' en pagina Rooms$")
+    public void clickDeleteEnPaginaRooms() {
+        room.clickdeleteroom();
+    }
+
+    @And("^Click 'Acept' en alert$")
+    public void clickAceptEnAlert() {
+        room.clickaceptalert();
+    }
+
+    @And("^Click en Menu 'Flight' en pagina home$")
+    public void clickEnMenuFlightEnPaginaHome() {
+        airport.clickmenuflight();
+
+    }
+
+    @And("^Click en SubMenu 'Airports' en pagina Flight$")
+    public void clickEnSubMenuAirportsEnPaginaFlight() {
+        airport.clicksubmenuairports();
+
+    }
+
+    @And("^Click en 'ADD' en pagina Airports$")
+    public void clickEnADDEnPaginaAirports() {
+        airport.clickaddairports();
+
+    }
+
+    @And("^Insert codigo \"([^\"]*)\" en formulario add Airports$")
+    public void insertCodigoEnFormularioAddAirports(String codeair) throws Throwable {
+        airport.setcodigoair(codeair);
+    }
+
+    @And("^Insert nombre \"([^\"]*)\" en formulario add Airports$")
+    public void insertNombreEnFormularioAddAirports(String nameair) throws Throwable {
+        airport.setnameair(nameair);
+    }
+
+    @And("^Insert codigo ciudad \"([^\"]*)\" en formulario add Airports$")
+    public void insertCodigoCiudadEnFormularioAddAirports(String codecityair) throws Throwable {
+        airport.setcodcity(codecityair);
+
+    }
+
+    @And("^Insert nombre ciudad \"([^\"]*)\" en formulario add Airports$")
+    public void insertNombreCiudadEnFormularioAddAirports(String namecityair) throws Throwable {
+        airport.setnamecity(namecityair);
+
+    }
+
+    @And("^Insert nombre pais \"([^\"]*)\" en formulario add Airports$")
+    public void insertNombrePaisEnFormularioAddAirports(String namecountryair) throws Throwable {
+        airport.setnamecountry(namecountryair);
+    }
+
+    @And("^Insert codigo pais \"([^\"]*)\" en formulario add Airports$")
+    public void insertCodigoPaisEnFormularioAddAirports(String codecounair) throws Throwable {
+        airport.setcodecountry(codecounair);
+    }
+
+    @And("^Insert zona horaria \"([^\"]*)\" en formulario add Airports$")
+    public void insertZonaHorariaEnFormularioAddAirports(String timezoneair) throws Throwable {
+        airport.settimezone(timezoneair);
+    }
+
+    @And("^Insert latitud \"([^\"]*)\" en formulario add Airports$")
+    public void insertLatitudEnFormularioAddAirports(String latitudair) throws Throwable {
+        airport.setlatitud(latitudair);
+    }
+
+    @And("^Insert longitud \"([^\"]*)\" en formulario add Airports$")
+    public void insertLongitudEnFormularioAddAirports(String longitudair) throws Throwable {
+        airport.setlongitud(longitudair);
+    }
+
+    @And("^Insert ciudad \"([^\"]*)\" en formulario add Airports$")
+    public void insertCiudadEnFormularioAddAirports(String cityair) throws Throwable {
+        airport.setcity(cityair);
+    }
+
+    @And("^Click 'SAVE & RETURN' en formulario add Airports$")
+    public void clickSAVERETURNEnFormularioAddAirports() {
+        airport.clicksaveair();
+    }
+
+    @And("^Click en 'SEARCH' en pagina Airports$")
+    public void clickEnSEARCHEnPaginaAirports() {
+        airport.clicksearchair();
+    }
+
+    @And("^Insert air search \"([^\"]*)\" en pagina Airports$")
+    public void insertAirSearchEnPaginaAirports(String seaair) throws Throwable {
+        airport.setsearchair(seaair);
+    }
+
+    @And("^Click en 'GO' en pagina Airports$")
+    public void clickEnGOEnPaginaAirports() {
+        airport.clickgo();
+    }
+
+    @And("^Click en 'EDIT' en pagina Airports$")
+    public void clickEnEDITEnPaginaAirports() {
+        airport.clickeditair();
+    }
+
+    @And("^Click 'SAVE & RETURN' en formulario edit Airports$")
+    public void clickSAVERETURNEnFormularioEditAirports() {
+        airport.clicksaveair();
+    }
+
+    @And("^Click 'RESET' en pagina Airports$")
+    public void clickRESETEnPaginaAirports() {
+        airport.clickresetair();
+    }
+
+
+    @And("^Click en 'Delete' en pagina Airports$")
+    public void clickEnDeleteEnPaginaAirports() {
+        airport.clickdeleteair();
+    }
+
+    @Given("^'PHP travel Menu Rooms' page is loaded$")
+    public void phpTravelMenuRoomsPageIsLoaded() {
+        room = LoadPage.roomPage();
+    }
+
+    @Given("^'PHP travel Menu Airports' page is loaded$")
+    public void phpTravelMenuAirportsPageIsLoaded() {
+        airport = LoadPage.airportsPage();
+    }
+
+    @Given("^'PHP travel Menu Module' page is loaded$")
+    public void phpTravelMenuModulePageIsLoaded() {
+        module = LoadPage.modulePage();
     }
 }
