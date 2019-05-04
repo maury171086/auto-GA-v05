@@ -16,57 +16,57 @@ public class StepsDefinitionFormularioUsuario {
         formularioUsuario = new FormUsuario();
     }
 
-    @And("^press button new username$")
+    @And("^press button new username page admins management$")
     public void displayFormUsername() {
         dashboard.createNewUser();
     }
 
-    @And("^insert \"([^\"]*)\" firstname$")
+    @And("^insert \"([^\"]*)\" firstname page form user$")
     public void agregarCampoFistname(String firstname) {
         formularioUsuario.insertFirstname(firstname);
     }
 
-    @And("^insert \"([^\"]*)\" lastname$")
+    @And("^insert \"([^\"]*)\" lastname page form user$")
     public void agregarCampoLastname(String lastname) {
         formularioUsuario.insertLastname(lastname);
     }
 
-    @And("^insert \"([^\"]*)\" email$")
+    @And("^insert \"([^\"]*)\" email page form user$")
     public void agregarCampoEmail(String email) {
         formularioUsuario.insertEmail(email);
     }
 
-    @And("^insert \"([^\"]*)\" password$")
+    @And("^insert \"([^\"]*)\" password page form user$")
     public void agregarCampoPassword(String password) {
         formularioUsuario.insertPassword(password);
     }
 
-    @And("^insert \"([^\"]*)\" mobile number$")
+    @And("^insert \"([^\"]*)\" mobile number page form user$")
     public void agregarCampoMobilNumber(String number) {
         formularioUsuario.insertMobilNumber(number);
     }
 
-    @And("^select Bolivia country$")
+    @And("^select Bolivia country page form user$")
     public void seleccionarPaisBolivia() {
         formularioUsuario.selectCountryBolivia();
     }
 
-    @And("^insert \"([^\"]*)\" addres 1$")
+    @And("^insert \"([^\"]*)\" addres1 page form user$")
     public void agregarCampoAddres1(String addres1) {
         formularioUsuario.insertAddres1(addres1);
     }
 
-    @And(("^press check box hotels$"))
+    @And(("^press check box hotels page form user$"))
     public void pressCheckHotels() {
         formularioUsuario.insertCheckHotels();
     }
 
-    @And("^click button subscriber$")
+    @And("^click button subscriber page form user$")
     public void clickButtonSubscriber() {
         formularioUsuario.pressButtonSubscriber();
     }
 
-    @And("^press check tours$")
+    @And("^press check tours page form user$")
     public void clickButtonTours() {
         formularioUsuario.insertTours();
     }
@@ -76,12 +76,12 @@ public class StepsDefinitionFormularioUsuario {
         formularioUsuario.pressButtonSubmit();
     }
 
-    @And("^press button edit$")
+    @And("^press button edit page admins management$")
     public void pressButtonEdit() {
         formularioUsuario.pressButtonEdit();
     }
 
-    @And("^press button delete$")
+    @And("^press button delete page admins management$")
     public void pressButonDelete() {
         formularioUsuario.pressButtonDelete();
     }
