@@ -6,8 +6,6 @@ import org.umssdiplo.automationv01.core.managepage.BasePage;
 import org.umssdiplo.automationv01.core.utils.CommonEvents;
 
 public class Module extends BasePage {
-
-
     @FindBy(xpath = "//*[@id=\"moduleStatus\"]")
     private WebElement moduleenabled;
     @FindBy(xpath = "//*[@id='social-sidebar-menu']/li[3]/a")

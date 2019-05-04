@@ -49,7 +49,6 @@ public class Airport extends BasePage {
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[2]/td[13]/span/a[3]")
     private WebElement deleteair;
 
-
     public void clickaceptalert() {
         CommonEvents.popdialogacept();
     }

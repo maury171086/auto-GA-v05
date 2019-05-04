@@ -7,7 +7,6 @@ import org.umssdiplo.automationv01.core.utils.CommonEvents;
 
 
 public class Room extends BasePage {
-
     @FindBy(xpath = "//*[@id=\'social-sidebar-menu\']/li[7]/a")
     private WebElement menuhotel;
     @FindBy(xpath = "//*[@id=\'Hotels\']/li[2]/a")
