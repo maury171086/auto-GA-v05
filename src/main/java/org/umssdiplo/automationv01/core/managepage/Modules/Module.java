@@ -8,13 +8,16 @@ import org.umssdiplo.automationv01.core.utils.CommonEvents;
 public class Module extends BasePage {
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/table/tbody/tr[1]/td[3]//*[@id=\"moduleStatus\"]")
-    private WebElement botonStatusHotels;
+    private WebElement botonEnabledHotels;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/table/tbody/tr[1]/td[3]//*[@id=\"moduleStatus\"]")
+    private WebElement botonDisabledHotels;
 
     @FindBy(xpath = "//*[@id=\"smartAlertButtons\"]/div[1]")
     private WebElement botonYesConfirm;
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/table/tbody/tr[7]/td[3]//*[@id=\"moduleStatus\"]")
-    private WebElement botonStatusBlog;
+    private WebElement botonEnabledBlog;
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/table/tbody/tr[7]/td[3]/a/button")
     private WebElement botonSettingsBlog;
@@ -23,11 +26,11 @@ public class Module extends BasePage {
     private WebElement botonUpOrderModuleBlog;
 
     public void disabledHotels() {
-        CommonEvents.clickButton(botonStatusHotels);
+        CommonEvents.clickButton(botonDisabledHotels);
     }
 
     public void disabledBlog() {
-        CommonEvents.clickButton(botonStatusBlog);
+        CommonEvents.clickButton(botonEnabledBlog);
     }
 
     public void aceptDisabledModuleHotels() {
@@ -35,11 +38,11 @@ public class Module extends BasePage {
     }
 
     public void enabledHotels() {
-        CommonEvents.clickButton(botonStatusHotels);
+        CommonEvents.clickButton(botonEnabledHotels);
     }
 
     public void enabledBlog() {
-        CommonEvents.clickButton(botonStatusBlog);
+        CommonEvents.clickButton(botonEnabledBlog);
     }
 
     public void displaySettingsBlog() {

@@ -4,8 +4,8 @@ Feature: Login
   Scenario: Home page is displayed once set credential in login page
     Given 'PHP travel' page is loaded
     And fill credentials on 'Login' data
-      |username|password|
-      |admin@phptravels.com|demoadmin|
+      | username             | password  |
+      | admin@phptravels.com | demoadmin |
 
   Scenario: probar boton website en el dashboard
     Given press button DASHBOAR page main dashboard
@@ -32,8 +32,8 @@ Feature: Login
     And press check tours page form user
     Then press button submit
     Examples:
-      |firsname|lastname|email            |password|mobileNumber|addres1               |
-      |Arebalo |Lopez   |arebalo@gmail.com|123456   |71039562    |Av. Geronimo de osorio|
+      | firsname | lastname | email             | password | mobileNumber | addres1                |
+      | Arebalo  | Lopez    | arebalo@gmail.com | 123456   | 71039562     | Av. Geronimo de osorio |
 
 
   Scenario Outline: modify user admin
@@ -42,19 +42,19 @@ Feature: Login
     And insert "<firsname>" firstname page form user
     And insert "<lastname>" lastname page form user
     Then press button submit
-  Examples:
-    |firsname|lastname|
-    |Rudolf |Felipez Mancilla   |
+    Examples:
+      | firsname | lastname         |
+      | Rudolf   | Felipez Mancilla |
 
   Scenario: delete user admin
     Given mostrar page admins management
     And press button delete page admins management
     Then press button acept popus dialog
 
-  Scenario: disabled module 'HOTELS'
-    Given press button modules
-    And press button DISABLED HOTELS
-    Then acept the confirm disable module
+#  Scenario: disabled module 'HOTELS'
+#    Given press button modules
+#    And press button DISABLED HOTELS
+#    Then acept the confirm disable module
 
   Scenario: disabled module 'BLOG'
     Given press button modules

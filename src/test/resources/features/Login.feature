@@ -51,10 +51,10 @@ Feature: Login
     And press button delete page admins management
     Then press button acept popus dialog
 
-  Scenario: disabled module 'HOTELS'
-    Given press button modules
-    And press button DISABLED HOTELS
-    Then acept the confirm disable module
+#  Scenario: disabled module 'HOTELS'
+#    Given press button modules
+#    And press button DISABLED HOTELS
+#    Then acept the confirm disable module
 
   Scenario: disabled module 'BLOG'
     Given press button modules
