@@ -16,7 +16,7 @@ public class Cars extends BasePage {
     private WebElement insertarNombreCoche;
     @FindBy(id = "add")
     private WebElement botonSubmitCar;
-    @FindBy(xpath = "//span/a[@id=\"15\"]")
+    @FindBy(id = "12")
     private WebElement botonEliminarCar;
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[4]/td[12]/span/a[1]/i")
     private WebElement botonEditarcars;

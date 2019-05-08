@@ -1,7 +1,7 @@
 # Login feature review the behavior in thie feature
 Feature: Login
 
-  Background: Home page is displayed once set credential in login page
+  Scenario: Home page is displayed once set credential in login page
     Given 'PHP travel' page is loaded
     And fill credentials on 'Login' data
       |username|password|
@@ -36,19 +36,19 @@ Feature: Login
     And click 'SUBMIT' boton edit
 
   # menu Blog
-  Scenario Outline: ADD Posts page
+  Scenario: ADD Posts page
     Given 'PHP travels section Blog' page is loaded
     And Click Menu 'BLOG' in home menu
-    And Click Sub Menu 'POSTS' in home Sub Menu
-    And Click button 'ADD' in page Blog
-    And Insert imput Post Title "<post_Title>" in form Add Posts
+    #And Click Sub Menu 'POSTS' in home Sub Menu
+    #And Click button 'ADD' in page Blog
+    #And Insert imput Post Title "<post_Title>" in form Add Posts
     #And Insert imput Area Text "<text_Area>" in form Text
-    And Select "<status>" in form posts
-    And Select "<category>" in form
-    And Click Button 'SUBMIT' in form posts add
-    Examples:
-    |post_Title   |text_Area                     |status|category|
-    |Posts Ejemplo|este es un ejemplo de Posts   |Enable|Adventure|
+    #And Select "<status>" in form posts
+    #And Select "<category>" in form
+    #And Click Button 'SUBMIT' in form posts add
+    #Examples:
+    #|post_Title   |text_Area                     |status|category|
+    #|Posts Ejemplo|este es un ejemplo de Posts   |Enable|Adventure|
 
   Scenario Outline: Add Blog Categories
     Given 'PHP travels section Blog' page is loaded
@@ -114,7 +114,7 @@ Scenario Outline: Offers Settings
     And Click Button 'SEND NEWSLETTERS' in form news letters
     #And Select "<Send_To>" in form send newsletters
     And Insert "<Subject>" in form
-    And click Button 'SEND' in form
+    #And click Button 'SEND' in form
     Examples:
       |Send_To  |Subject|
       |Customers|tema   |
