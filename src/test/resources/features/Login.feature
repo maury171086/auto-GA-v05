@@ -1,6 +1,7 @@
+
 Feature: Login
 
-  Background: Home page is displayed once set Credential in Login page
+  Scenario:      Home page is displayed once set Credential in Login page
     Given 'PHP travel' page is loaded
     And fill credentials on 'Login' data
       | username             | password  |
@@ -53,12 +54,18 @@ Feature: Login
       | Disabled | Superior Double | Grand Plaza Apartments | 3000  | 5        | 5           | 4         | 1           | 4            | 4               |
 
           #Delete Room
-  Scenario: Eliminar Rooms
+  Scenario Outline: Eliminar Rooms
     Given 'PHP travel Menu Rooms' page is loaded
     And Click en Menu 'Hotels' en pagina home
     And Click en SubMenu 'Rooms' en pagina Hotels
+    And Click en 'SEARCH' en pagina Rooms
+    And Insert air search "<search>" en pagina Rooms
+    And Click en 'GO' en pagina Rooms
     And Click 'Delete' en pagina Rooms
-    And Click 'Acept' en alert
+    And Click 'Acept' en alert en pagina Rooms
+    Examples:
+      | search       |
+      | Triple Rooms |
 
       #Menu Flight
         #Sub Menu Airports
@@ -107,7 +114,7 @@ Feature: Login
     And Click 'RESET' en pagina Airports
     Examples:
       | search   | code | name        | citycode | cityname    | countryname | countrycode | timezone | lat     | log    | city  |
-      | Mauricio | CAR  | Carlos Arpt | CMG      | Carlos City | CG          | CCC         | -2       | -30.456 | 40.876 | false |
+      | SPAIN  | CAR  | Carlos Arpt | CMG      | Carlos City | CG          | CCC         | -2       | -30.456 | 40.876 | false |
 
        #Delete Airports
   Scenario Outline: Delete Airports
@@ -118,7 +125,7 @@ Feature: Login
     And Insert air search "<search>" en pagina Airports
     And Click en 'GO' en pagina Airports
     And Click en 'Delete' en pagina Airports
-    And Click 'Acept' en alert
+    And Click 'Acept' en alert en pagina Airports
     Examples:
       | search      |
       | Carlos Arpt |
@@ -131,5 +138,5 @@ Feature: Login
     Given 'PHP travel Menu Module' page is loaded
     And click en Menu 'Module' en pagina home
     And click en 'Enabled/Disabled module' en pagina module
-    And click en 'Enabled/Disablet' en alert
-    And click en 'Dashboard' en pagina home
+    And click en 'Enabled/Disabled' en alert
+

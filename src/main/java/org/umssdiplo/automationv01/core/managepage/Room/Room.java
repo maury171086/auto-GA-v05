@@ -37,11 +37,17 @@ public class Room extends BasePage {
     private WebElement bedschargesroom;
     @FindBy(css = "button[id=\"add\"]")
     private WebElement submitaddroom;
-    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[11]/span/a[1]")
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[3]/td[11]/span/a[1]")
     private WebElement editroom;
     @FindBy(css = "button[id=\"update\"]")
     private WebElement submiteditroom;
-    @FindBy(xpath = "//*[@id=\"60\"]")
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[3]/a")
+    private WebElement searroom;
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[3]/span[1]/input")
+    private WebElement searchroom;
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[3]/span[1]/span/a")
+    private WebElement gosearchroom;
+    @FindBy(xpath = "//*[@id=\"53\"]")
     private WebElement deleteroom;
 
 
@@ -124,8 +130,23 @@ public class Room extends BasePage {
         CommonEvents.clickButton(submiteditroom);
     }
 
-    public void clickdeleteroom() {
+    public void clicksearchrooms() {
+        CommonEvents.scrollComponent(searroom, webDriver);
+        CommonEvents.clickButton(searroom);
+    }
 
+    public void setsearchrooms(String searoom) {
+        CommonEvents.scrollComponent(searchroom, webDriver);
+        CommonEvents.setInputField(searchroom, searoom);
+
+    }
+
+    public void clickgo() {
+        CommonEvents.clickButton(gosearchroom);
+    }
+    public void clickdeleteroom() {
+        CommonEvents.forceWait(5000);
+        CommonEvents.scrollComponentUP(deleteroom, webDriver);
         CommonEvents.clickButton(deleteroom);
     }
 

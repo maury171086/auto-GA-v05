@@ -36,14 +36,9 @@ public class StepsDefinitionPHPtravel {
         module.clickenabledbtn();
     }
 
-    @And("^click en 'Enabled/Disablet' en alert$")
+    @And("^click en 'Enabled/Disabled' en alert$")
     public void clickOnEnabled() throws Throwable {
         module.clickenabled();
-    }
-
-    @And("^click en 'Dashboard' en pagina home$")
-    public void clickOnDashboardEnPaginaHome() throws Throwable {
-        module.clickdashboard();
     }
 
     @And("^Click en Menu 'Hotels' en pagina home$")
@@ -136,7 +131,22 @@ public class StepsDefinitionPHPtravel {
         room.clickdeleteroom();
     }
 
-    @And("^Click 'Acept' en alert$")
+    @And("^Click en 'SEARCH' en pagina Rooms$")
+    public void clickEnSEARCHEnPaginaRooms() {
+        room.clicksearchrooms();
+    }
+
+    @And("^Insert air search \"([^\"]*)\" en pagina Rooms$")
+    public void insertAirSearchEnPaginaRoomss(String searoom) throws Throwable {
+        room.setsearchrooms(searoom);
+    }
+
+    @And("^Click en 'GO' en pagina Rooms$")
+    public void clickEnGOEnPaginaRooms() {
+        room.clickgo();
+    }
+
+    @And("^Click 'Acept' en alert en pagina Rooms$")
     public void clickAceptEnAlert() {
         room.clickaceptalert();
     }
@@ -265,5 +275,10 @@ public class StepsDefinitionPHPtravel {
     @Given("^'PHP travel Menu Module' page is loaded$")
     public void phpTravelMenuModulePageIsLoaded() {
         module = LoadPage.modulePage();
+    }
+
+    @And("^Click 'Acept' en alert en pagina Airports$")
+    public void clickAceptEnAlertEnPaginaAirports() {
+        airport.clickaceptalert();
     }
 }

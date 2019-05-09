@@ -8,7 +8,7 @@ import org.umssdiplo.automationv01.core.utils.CommonEvents;
 
 public class Airport extends BasePage {
 
-
+    @FindBy(xpath = "//*[@id=\"social-sidebar-menu\"]/li[8]/a")
     private WebElement menuflight;
     @FindBy(xpath = "//*[@id=\"Flights\"]/li[2]/a")
     private WebElement submenuairpots;
@@ -42,7 +42,7 @@ public class Airport extends BasePage {
     private WebElement searair;
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[3]/span[1]/span/a")
     private WebElement gosearch;
-    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr/td[13]/span/a[2]")
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[2]/td[13]/span/a[2]")
     private WebElement editair;
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[3]/span[1]/span/a[2]")
     private WebElement resetair;
@@ -62,6 +62,8 @@ public class Airport extends BasePage {
     }
 
     public void clickaddairports() {
+        CommonEvents.forceWait(5000);
+        CommonEvents.scrollComponentUP(addairports, webDriver);
         CommonEvents.clickButton(addairports);
     }
 

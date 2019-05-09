@@ -12,8 +12,7 @@ public class Module extends BasePage {
     private WebElement modules;
     @FindBy(xpath = "//*[@id='smartAlertButtons']/div[1]")
     private WebElement enabled;
-    @FindBy(xpath = "//*[@id='social-sidebar-menu']/li[1]/a")
-    private WebElement dashboard;
+
 
     public void clickenabledbtn() {
 
@@ -28,11 +27,6 @@ public class Module extends BasePage {
     public void clickenabled() {
 
         CommonEvents.clickButton(enabled);
-    }
-
-    public void clickdashboard() {
-
-        CommonEvents.clickButton(dashboard);
     }
 
 
