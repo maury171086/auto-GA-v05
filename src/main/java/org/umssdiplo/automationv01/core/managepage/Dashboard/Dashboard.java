@@ -38,12 +38,9 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//*[@id=\"ACCOUNTS\"]/li[1]")
     private WebElement botonAdmins;
 
-<<<<<<< HEAD
     @FindBy(xpath = "//*[@id=\"social-sidebar-menu\"]/li[3]/a")
     private WebElement botonModules;
 
-=======
->>>>>>> origin/development
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/form/button")
     private WebElement botonAddUsuario;
 
@@ -91,7 +88,6 @@ public class Dashboard extends BasePage {
     public void displayAdminsManagement() {
         CommonEvents.clickButton(botonAccounts);
         CommonEvents.clickButton(botonAdmins);
-<<<<<<< HEAD
 
 
     }
@@ -102,9 +98,5 @@ public class Dashboard extends BasePage {
 
     public void pressButtonModules() {
         CommonEvents.clickButton(botonModules);
-=======
-        CommonEvents.clickButton(botonAddUsuario);
-
->>>>>>> origin/development
     }
 }
